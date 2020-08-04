@@ -18,7 +18,7 @@
   --color-box-base: #FFFFFF;
   --color-box-footer: #FAFAFC;
 
-  font-size: 60%;
+  font-size: 50%;
 }
 
 * {
@@ -46,13 +46,13 @@ body, input, button, textarea {
 }
 
 .container {
-  width: 90vh;
+  width: 70vw;
   max-width: 700px;
 }
 
 @media (min-width: 700px) {
   :root {
-    font-size: 62.5%;
+    font-size: 52.5%;
   }
 }
 
