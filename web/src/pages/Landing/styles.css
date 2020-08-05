@@ -37,8 +37,8 @@
 }
 
 .buttons-container a {
-  width: 20rem;
-  height: 8.4rem;
+  width: 30rem;
+  height: 9rem;
   border-radius: 0.8rem;
   font: 700 2.0rem Archivo;
 
@@ -133,8 +133,6 @@
   }
 
   .buttons-container a {
-    width: 22rem;
-    height: 8.4rem;
     font-size: 2.4rem;
   }
 
