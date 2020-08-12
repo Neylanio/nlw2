@@ -120,6 +120,10 @@
     column-gap: 1.6rem;/* distanciamento entre as colunas */
   }
 
+  #page-teacher-form main fieldset .schedule-item  + .schedule-item {
+    margin-top: 2.4rem;
+  }
+
   #page-teacher-form main fieldset .schedule-item .input-block {
     margin-top: 0 !important;
   }
