@@ -3,6 +3,7 @@ import React from 'react';
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
 import './styles.css';
+import api from '../../services/api';
 
 export interface Teacher {
   id: number;
@@ -18,7 +19,14 @@ interface TeacherItemProps {
   teacher: Teacher;
 }
 
-const TeacherItem: React.FC<TeacherItemProps> = ({ teacher: {subject, cost, name, avatar, whatsapp, bio}, children }) => {
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher: {id, subject, cost, name, avatar, whatsapp, bio}, children }) => {
+
+  function createNewConnection(){
+    api.post('connections', {
+      user_id: id
+    });
+  }
+
   return (
     <article className="teacher-item">
         <header>
@@ -36,7 +44,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher: {subject, cost, name
             Preço/hora
             <strong>R$ {cost}</strong>
           </p>
-          <a href={`https://wa.me/${whatsapp}`}>
+          <a target="_blank" onClick={createNewConnection} href={`https://wa.me/${whatsapp}`}>
             <img src={whatsappIcon} alt="Whatsapp"/>
             Entrar em contato
           </a>
