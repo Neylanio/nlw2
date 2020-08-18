@@ -8,30 +8,48 @@ import whatsappIcon from '../../assets/images/icons/whatsapp.png';
 
 import styles from './styles';
 
-const TeacherItem: React.FC = () => {
+interface RequestProps {
+  id: number;
+  subject: string;
+  cost: 80;
+  user_id: number;
+  name: string;
+  avatar: string;
+  whatsapp: string;
+  bio: string;
+}
+
+const TeacherItem: React.FC<RequestProps> = ({
+    id, 
+    subject, 
+    cost, 
+    user_id, 
+    name, 
+    avatar, 
+    whatsapp, 
+    bio
+    }) => {
   return (
     <View style={styles.container}>
       <View style={styles.profile}>
         <Image 
           style={styles.avatar} 
-          source={{ uri: 'https://avatars1.githubusercontent.com/u/15330671?v=4' }}
+          source={{ uri: `${avatar}` }}
         />
 
         <View style={styles.profileInfo}>
-          <Text style={styles.name}>Neylanio</Text>
-          <Text style={styles.subject}>Física</Text>
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.subject}>{subject}</Text>
         </View>
       </View>
 
       <Text style={styles.bio}>
-        Entusiasta das melhores tecnologias de Física avançada.
-        {'\n'}{'\n'}
-        Apaixonado por calculos e termodinâmica.
+        {bio}
       </Text>
 
       <View style={styles.footer}>
         <Text style={styles.price}>
-          Preço/hora {'  '}
+          Preço/hora {'  '+ cost}
           <Text style={styles.priceValue}>R$ 20,00</Text>
         </Text>
 
